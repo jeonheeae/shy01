@@ -13,5 +13,5 @@ app.get("/list", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(port + "번에서 서버가 시작되었습니다.");
+  console.log(port + " 에서 서버가 시작되었습니다.");
 });
