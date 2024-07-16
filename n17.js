@@ -20,25 +20,38 @@ app.get("/", (req, res) => {
   list += `    tr,`;
   list += `    td {`;
   list += `        border: 1px solid #000;`;
-  list += `    }`;
+  list += `        }`;
   list += `</style>`;
-  list += `<body>`;
-  list += `    <table>`;
-
-  list += `        <tr>`;
-  list += `            <th> </th>`;
+  list += `<body><h1>구구단</h1>
+            <form action="/">
+                <select name="gugu">
+                    <option value="0">전체</option>`;
   for (let i = 2; i <= 9; i++) {
-    list += `            <th>${i}단</th>`;
+    list += `         <option value="${i}">${i}단</option>`;
   }
-  list += `        </tr>`;
+  list += ` </select><input type="submit" value="확인"></form>`;
+  list += `<table><tr>`;
 
-  for (let j = 1; j <= 9; j++) {
-    list += `        <tr>`;
-    list += `            <td>${j}</td>`;
-    for (let i = 2; i <= 9; i++) {
-      list += `            <td>${i} x ${j} = ${i * j}</td>`;
+  const gugu = req.query.gugu;
+  if (!gugu || gugu == 0) {
+    list += `<th></th>`;
+    for (let k = 2; k <= 9; k++) {
+      list += `<th>${k}단</th>`;
     }
-    list += `        </tr>`;
+    list += `</tr>`;
+
+    for (let j = 1; j <= 9; j++) {
+      list += `<tr><td>${j}</td>`;
+      for (let i = 2; i <= 9; i++) {
+        list += `<td>${i} x ${j} = ${i * j}</td>`;
+      }
+      list += `</tr>`;
+    }
+  } else {
+    list += `<th>${gugu}단</th></tr>`;
+    for (let i = 2; i <= 9; i++) {
+      list += `<td>${gugu} x ${i} = ${gugu * i}</td></tr>`;
+    }
   }
 
   list += `    </table>`;
