@@ -8,7 +8,7 @@ const db = mysql.createConnection({
   user: "jha",
   port: 3306,
   password: "1234",
-  database: "test_db",
+  database: "mydatabase",
 });
 db.connect((error) => {
   if (error) {
@@ -26,6 +26,7 @@ app.get("/", (req, res) => {
 app.get("/list", (req, res) => {
   db.query("SELECT * from web2", (err, results) => {
     const data = results;
+    console.log(data);
     let list = `<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">`;
     list += `    <title>리스트</title>`;
     list += `    <style>`;
@@ -71,11 +72,11 @@ app.get("/list", (req, res) => {
 
     data.forEach((v) => {
       list += `        <tr>`;
-      list += `            <td>${v.num}</td>`;
-      list += `            <td>${v.id}</td>`;
-      list += `            <td>${v.name}</td>`;
-      list += `            <td>${v.age}</td>`;
-      list += `            <td>${v.email}</td>`;
+      list += `            <td>${v.Num}</td>`;
+      list += `            <td>${v.Id}</td>`;
+      list += `            <td>${v.Name}</td>`;
+      list += `            <td>${v.Age}</td>`;
+      list += `            <td>${v.Email}</td>`;
       list += `        </tr>`;
     });
 
