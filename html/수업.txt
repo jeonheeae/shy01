@@ -1,0 +1,23 @@
+0708 수업
+1.nodejs 설치 (LTS)
+2. 버전확인
+3. http로 서버구성(v8엔진, node 파일명.js)
+4. http 응용
+5. http(http) +html => (웹서비스 가능), 경로 __dirname 
+6. express 설치 (다가지고 있다.)
+
+- 화살표 함수 (간단하게 코드를 줄여준다는 장점을 보유)
+- json file 형식 (데이터 주고받을 때 용이함)
+(https://www.json.org/json-ko.html 사이트 설명 참조하기)
+
+--------------------------------------------------------------
+0709수업
+7. 라이터생성(호스트의 라우팅)
+8.로거설치(morgan)
+9.REST API - GET ( 1.query string, 2.path ), POST
+1)http://localhost:3000/book?uname=...&bame=...
+2)http://localhost:3000/book/김첨지/대박날/2020.2.11
+
+var => const, let
+
+, : ; ( { [ & / \ `
