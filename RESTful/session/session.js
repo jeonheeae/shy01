@@ -1,6 +1,6 @@
 const express = require("express");
 const session = require("express-session");
-const app = express(`body-parser`);
+const app = express();
 const port = 3000;
 
 app.listen(port, () => {
