@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
         <button onclick ="location.href='/logout'">로그아웃</button>
         `);
   } else {
-    res.sendFile(__dirname + "/index.html");
+    res.sendFile(__dirname + "/login.html");
   }
 });
 
