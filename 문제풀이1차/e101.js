@@ -12,8 +12,8 @@ app.get("/", (req, res) => {
 
 app.post("/", (req, res) => {
   const { username, password } = req.body; // query 는 get 방식
-  const idOK = /^[A-Za-z0-9]{1,8}$/g.test(username); // 방법1. true or false 반환
-  const pwOK = password.match(/^[A-Za-z0-9]{1,8}$/g); // 방법2. 정규표현식에 일치한 값
+  const idOK = /^[A-Za-z]{1,7}$/g.test(username); // 방법1. true or false 반환
+  const pwOK = password.match(/^[A-Za-z0-9]{1,9}$/g); // 방법2. 정규표현식에 일치한 값
   console.log(idOK, pwOK, !!pwOK);
 
   if (idOK && !!pwOK) {
