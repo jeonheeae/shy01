@@ -19,11 +19,63 @@ app.post("/", (req, res) => {
     //res.send("로그인되었습니다.");
     if (username === "admin" && password === "123456") {
       res.send(`
+        
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 페이지</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원 관리</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f9f9;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            text-align: center;
+            border: 2px solid #333;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .btn-pink {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff69b4; /* 핑크색 */
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn-yellow {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ffd700; /* 노란색 */
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
   <body>
       <div class="container">
           <h1>관리자로 로그인 하셨습니다.</h1>
-          <a href="#">회원관리</a>
-          <a href="#">회원삭제</a>
+        <button class="btn-pink">회원 관리</button>
+         <button class="btn-yellow">회원 삭제</button>
       </div>
       </div>
   </body>`);
@@ -36,20 +88,3 @@ app.post("/", (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port http://localhost:${port}`);
 });
-
-// <!DOCTYPE html>
-// <html lang="ko">
-
-// <head>
-//     <meta charset="UTF-8">
-//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-//     <title>로그인 페이지</title>
-//     <style>
-//         .container {
-//             text-align: center;
-//             border-radius: 15px;
-//             border: 1px solid rgba(0, 0, 0);
-//             padding: 40px;
-//         }
-//     </style>
-// </head>

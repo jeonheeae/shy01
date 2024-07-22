@@ -42,22 +42,21 @@
         margin: 10px 0;
         border: none;
         border-radius: 4px;
-        background-color: #007bff;
-        color: white;
+        background-color: #ffbde6;
+        color: #0c0c0c;
         font-size: 16px;
         cursor: pointer;
       }
 
       .login-container button:hover {
-        background-color: #0056b3;
+        background-color: #fa177d;
       }
 
       .login-container .reset-btn {
-        background-color: #6c757d;
+        background-color: #ccf7ff;
       }
-
       .login-container .reset-btn:hover {
-        background-color: #5a6268;
+        background-color: #02d9ff;
       }
     </style>
   </head>
@@ -74,7 +73,8 @@
             name="un"
             id="un"
             placeholder="아이디"
-            parequired />
+            parequired
+          />
           <!-- pattern="[A-Za-z0-9].{8,}/g"-->
           <label for="pw">비밀번호</label>
           <input
@@ -82,7 +82,8 @@
             name="pw"
             id="pw"
             placeholder="비밀번호"
-            required />
+            required
+          />
           <button type="submit">로그인</button>
           <button type="reset" class="reset-btn">다시 입력</button>
         </form>
