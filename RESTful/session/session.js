@@ -18,58 +18,49 @@ app.get("/", (req, res) => {
     res.send(`
         <h2>${req.session.username}님 안녕하세요</h2>
         <h2>${req.session.username}님의 개인공간입니다.</h2>
-        <hr>
-        <h3>대충 개인 데이터베이스 목록</h3>
-        <button onclick ="location.href='/logout'">로그아웃</button>
+        <hr/>
+        <h2>대충 개인 데이터베이스 목록</h2>
+        <button onclick="location.href='/logout'">로그아웃</button>
         `);
   } else {
-    res.sendFile(__dirname + "/login.html");
+    res.sendFile(__dirname + "/index.html");
   }
 });
 
 app.get("/login", (req, res) => {
-  res.send(`
-    <!DOCTYPE html>
-    <html lang="ko">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    </head>
-        <body>
-            <form action="/login" method="POST">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username">
-                <label for="pw">Password:</label>
-                <input type="text" id="pw" name="password">
-                <button type="submit">Login</button>
-            </form>
-        </body>
-    </html>`);
+  res.sendFile(__dirname + "/login.html");
+});
+
+app.post("/login", (req, res) => {
+  const { username, password } = req.body; // query 는 get 방식
+  const idOK = /^[A-Za-z0-9]{1,8}$/g.test(username); // 방법1. true or false 반환
+  const pwOK = password.match(/^[A-Za-z0-9]{1,8}$/g); // 방법2. 정규표현식에 일치한 값
+  console.log(idOK, pwOK, !!pwOK);
+
+  if (idOK && !!pwOK) {
+    if (username === "test" && password == "1234") {
+      req.session.loggedIn = true;
+      req.session.username = username;
+      res.redirect("/");
+    } else {
+      res.send(`
+        <h3>정상적인 로그인이 필요합니다.</h3>
+        <button onclick="location.href='/'">뒤로가기</button>
+        `);
+    }
+  } else {
+    res.send(`<script>
+      alert('입력조건이 맞지 않습니다. 다시 작성해 주세요!');
+      window.location.href='/login';
+      </script>`);
+  }
 });
 
 app.get("/logout", (req, res) => {
   req.session.destroy((e) => {
     if (e) console.error(e);
-    res.send(
-      `<script>alert('로그아웃이 되었습니다!!');window.location.href="/"</script>`
-    );
+    res.send(`<script>alert('로그아웃이 되었습니다!!');window.location.href='/'</script>`);
   });
-});
-
-app.post("/login", (req, res) => {
-  const { username, password } = req.body; // query 는 get 방식
-
-  if (username === "test" && password == "1234") {
-    req.session.loggedIn = true;
-    req.session.username = username;
-    res.redirect("/");
-  } else {
-    res.send(`
-        <h3>정상적인 로그인이 필요합니다.</h3>
-        <button onclick="location.href='/'">뒤로가기</button>
-        `);
-  }
 });
 
 app.listen(port, () => {
