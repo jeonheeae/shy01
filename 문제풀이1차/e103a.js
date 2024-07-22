@@ -22,10 +22,10 @@ app.get("/gugu", (req, res) => {
     text-align: center}
 th,
 td {
-    border: 1px solid #000;width:10%;
+    border: 1px solid #D3D3D3;width:10%;
     }
 th,tr>td:first-child{
-    background-color: rgb(161, 227, 205);
+    background-color: rgb(255, 255, 153);
 } 
 h1{
     text-align: center;
@@ -52,7 +52,7 @@ h1{
     list += `<tr><td>${j}</td>`;
     for (let i = 2; i <= 9; i++) {
       if (gugu == i) {
-        list += `<td style="background-color:rgb(233, 233, 77);">`;
+        list += `<td style="background-color:pink;">`;
       } else {
         list += `<td>`;
       }
@@ -65,4 +65,6 @@ h1{
   res.send(list);
 });
 
-app.listen(port, () => console.log(`Server running on port http://localhost:${port}`));
+app.listen(port, () =>
+  console.log(`Server running on port http://localhost:${port}`)
+);
