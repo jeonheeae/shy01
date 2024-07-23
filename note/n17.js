@@ -1,6 +1,11 @@
 const express = require("express");
+const logger = require("morgan");
+const path = require("path");
+const multer = require("multer"); //파일업로드 처리하는 미들웨어
+
 const app = express();
 const port = 3000;
+const _path = path.join(__dirname, "/");
 
 app.get("/", (req, res) => {
   let list = ``;
