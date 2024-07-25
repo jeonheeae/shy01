@@ -21,7 +21,24 @@
           button.textContent = content[i]; // <body><button>content내용<//button><//body>
         }
 
-        document.querySelectorAll("button");
+        const bts = document.querySelectorAll("button");
+        const contents = document.querySelectorAll(".content");
+        contents[0].style.display = "block";
+        bts.forEach((bt, index) => {
+          bt.addEventListener("click", () => {
+            contents.forEach((content, contentIndex) => {
+              if (index === contentIndex) {
+                content.style.display =
+                  content.style.display === "none" ||
+                  content.style.display === ""
+                    ? "block"
+                    : "none";
+              } else {
+                content.style.display = "none";
+              }
+            });
+          });
+        });
       });
     </script>
     <style>
