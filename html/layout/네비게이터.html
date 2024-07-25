@@ -14,33 +14,52 @@
           "orange",
           "lightpink",
         ];
+
         for (let i = 0; i < content.length; i++) {
           const button = document.createElement("button"); // <button><//button>
           document.body.appendChild(button); // <body><button><//button><//body>
           button.setAttribute("class", "tab"); // <body><button class='tab'><//button><//body>
-          button.textContent = content[i]; // <body><button>content내용<//button><//body>
+          button.textContent = content[i]; // <body><button> content내용 <//button><//body>
         }
 
         const bts = document.querySelectorAll("button");
-        const contents = document.querySelectorAll(".content");
-        contents[0].style.display = "block";
-        bts.forEach((bt, index) => {
-          bt.addEventListener("click", () => {
-            contents.forEach((content, contentIndex) => {
-              if (index === contentIndex) {
-                content.style.display =
-                  content.style.display === "none" ||
-                  content.style.display === ""
-                    ? "block"
-                    : "none";
+        bts.forEach((bt) => {
+          bt.addEventListener("click", (e) => {
+            bts.forEach((v, i) => {
+              if (v.textContent == e.target.textContent) {
+                document.getElementById(v.textContent).classList.add("show");
+                v.style.backgroundColor = color[i];
               } else {
-                content.style.display = "none";
+                document.getElementById(v.textContent).classList.remove("show");
+                v.style.backgroundColor = "#555";
               }
             });
           });
         });
       });
+
+      // 내가 만든코드
+      // const bts = document.querySelectorAll("button");
+      // const contents = document.querySelectorAll(".content");
+      // contents[0].style.display = "block";
+      // bts.forEach((bt, index) => {
+      //   bt.addEventListener("click", () => {
+      //     contents.forEach((content, contentIndex) => {
+      //       if (index === contentIndex) {
+      //         content.style.display =
+      //           content.style.display === "none" ||
+      //           content.style.display === ""
+      //             ? "block"
+      //             : "none";
+      //       } else {
+      //         content.style.display = "none";
+      //       }
+      //     });
+      //   });
+      // });
+      // });
     </script>
+
     <style>
       .tab {
         background-color: #555;
@@ -53,15 +72,22 @@
         font-size: 17px;
         width: 20%;
       }
+
       .tab:hover {
         background-color: #888;
       }
+
       .content {
         color: #fff;
         display: none;
         padding: 50px;
         text-align: center;
       }
+
+      .content.show {
+        display: block;
+      }
+
       #About {
         background-color: tomato;
       }
@@ -85,7 +111,7 @@
   </head>
 
   <body>
-    <div id="About" class="content">
+    <div id="About" class="content show">
       <h1>About</h1>
       <p>Custom Software Development Company</p>
     </div>
