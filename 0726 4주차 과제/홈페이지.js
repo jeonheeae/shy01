@@ -46,6 +46,10 @@ app.get("/board", (req, res) => {
   res.sendFile(__dirname + "/board.html");
 });
 
+app.get("/nologinboard", (req, res) => {
+  res.sendFile(__dirname + "/nologinboard.html");
+});
+
 app.get("/writing", (req, res) => {
   res.sendFile(__dirname + "/writing.html");
 });
