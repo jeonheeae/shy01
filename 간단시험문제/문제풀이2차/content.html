@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
     <style>
       body {
         margin: 0;
@@ -75,13 +76,34 @@
       <legend>MySQL</legend>
       <form action="data" id="dataForm" method="POST">
         <label for="title">제목:</label>
-        <input type="text" id="title" name="title" /><br />
+        <input
+          type="text"
+          id="title"
+          name="title"
+          pattern="[A-Za-z0-9가-힣\s\W]+"
+          required
+        /><br />
+
         <label for="name">이름:</label>
-        <input type="text" id="name" name="name" /><br />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          pattern="[A-Za-z0-9가-힣\s\W]+"
+          required
+        /><br />
+
         <label for="date">작성일:</label>
-        <input type="date" id="date" name="date" /><br />
+        <input type="date" id="date" name="date" required /><br />
+
         <label for="content">내용:</label>
-        <input type="text" id="content" name="content" /><br />
+        <input
+          type="text"
+          id="content"
+          name="content"
+          pattern="[A-Za-z0-9가-힣\s\W]+"
+          required
+        /><br />
 
         <button type="submit">제출</button>
         <button type="reset">내용지우기</button>

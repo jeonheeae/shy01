@@ -31,7 +31,7 @@ db.connect((error) => {
 });
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/e201.html");
+  res.sendFile(__dirname + "/index.html");
 });
 
 app.get("/login", (req, res) => {
@@ -213,19 +213,65 @@ app.get("/list", (req, res) => {
 
 let counter = 0;
 /* 클릭시 디테일창 */
+
 app.get("/detail", (req, res) => {
   const search = req.query.search;
   console.log(search);
   db.query(`SELECT * FROM tb2 WHERE num=${search}`, (err, results) => {
     res.send(`
-      <div>${results[0].num}</div>
-      <div>${results[0].title}</div>
-      <div>${results[0].name}</div>
-      <div>${results[0].content}</div>
-      <div>${results[0].count}</div>
-      `);
+      <html>
+      <head>
+        <style>
+          body {
+            background-image: url(https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F9943DF4C5D3D32FA25);
+            font-family: Arial, sans-serif;
+          }
+          .post {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+          }
+
+          .title {
+            font-size: 24px;
+            color: #555;
+            margin-bottom: 10px;
+            font-weight: bold;
+          }
+          .author {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+          }
+          .content {
+        background-color: rgb(249, 251, 227);
+        border: 3px solid rgba(128, 103, 74, 0.885);
+        padding: 3px 7px;
+        border-radius: 5px;
+        font-weight: bold;
+          }
+          .count {
+            font-size: 12px;
+            color: #999;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="post">
+          <div class="num">${results[0].num}</div>
+          <div class="title">제목 : ${results[0].title}</div>
+          <div class="author">작성자: ${results[0].name}</div>
+          <div class="date">작성일: ${results[0].date}</div>
+          <div class="content">내용 : ${results[0].content}</div>
+          <div class="count">조회수: ${results[0].count}</div>
+        </div>
+      </body>
+      </html>
+    `);
     counter = results[0].count + 1;
   });
+
   /* 카운트 부분*/
   db.query(
     `UPDATE tb2 SET count = ${counter} WHERE num=${search}`,
