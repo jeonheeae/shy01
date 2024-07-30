@@ -10,6 +10,7 @@ const db = mysql.createConnection({
   password: "1234",
   database: "mydatabase",
 });
+
 db.connect((error) => {
   if (error) {
     console.log("접속실패!!");

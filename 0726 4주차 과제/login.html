@@ -74,7 +74,8 @@
           type="text"
           id="username"
           name="username"
-          placeholder="아이디를 입력하세요"
+          placeholder="아이디"
+          pattern="[A-Za-z0-9]{1,8}"
           required
         />
         <label for="pw">Password:</label>
@@ -82,7 +83,7 @@
           type="password"
           id="pw"
           name="password"
-          placeholder="비밀번호를 입력하세요."
+          placeholder="비밀번호"
           required
         />
         <button type="submit">로그인</button>
