@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-image: url("https://mblogthumb-phinf.pstatic.net/MjAxOTA4MTlfNzcg/MDAxNTY2MjIxNjM5OTM5.W0uBykNVh3HXFAIWFfUzheLkJWRtEUjlsViTWUsVMScg.9Z8nerATu2bCGN4VGoy0jqCLUtWGjk3JXhgvtnDEvoEg.JPEG.91hlee/IMG_0384.JPG?type=w800");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .wrap {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        text-align: center;
+        display: block;
+        padding: 10px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        opacity: 0.8;
+        margin: 0 auto;
+        max-width: 80%;
+      }
+
+      nav ul {
+        height: 30px;
+        text-align: center;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        font-size: 2rem;
+      }
+
+      li a {
+        margin: 0 20px;
+        background-color: rgb(255, 116, 139);
+        color: #ffffff;
+        padding: 10px 20px;
+        border-radius: 10px;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+        text-decoration-line: none;
+      }
+
+      button {
+        font-size: 1.2rem;
+        background-color: rgb(254, 255, 198);
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+      }
+
+      section {
+        display: flex;
+        height: 100%;
+        flex: 1;
+      }
+
+      aside {
+        width: 20%;
+        /* background-color: rgb(186, 171, 255); */
+      }
+
+      footer {
+        height: 70px;
+        /* background-color: darkgoldenrod; */
+        text-align: center;
+      }
+
+      h2 {
+        padding: 1rem;
+      }
+
+      .container {
+        text-align: center;
+      }
+      .article {
+        padding: 0 20px;
+        background-color: #ffbbc9;
+        height: 40px;
+        font-size: 1.2rem;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- div.wrap>header+nav+section>aside+aticle+aside^footer -->
+    <div class="wrap">
+      <header>
+        <h1>💜희애 게시판💜</h1>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="#">홈</a></li>
+          <li><a href="/list">게시글</a></li>
+          <li><a href="/mypage">마이페이지</a></li>
+          <li><a href="/login">로그인</a></li>
+          <li><a href="/logout">로그아웃</a></li>
+        </ul>
+      </nav>
+      <section>
+        <article class="article">
+          💡 게시판을 nodejs와 리엑트로 구성하려 합니다.
+        </article>
+        <!-- <aside><button onclick="window.location.href='/login'">로그인</button></aside> -->
+      </section>
+      <footer>
+        <span>회사소개 개인, 개인서버동작, KYS Corp.</span>
+      </footer>
+    </div>
+  </body>
+</html>

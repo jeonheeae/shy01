@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      form {
+        width: 350px;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+      }
+      fieldset {
+        border: 2px solid #ccc;
+        border-radius: 15px;
+        padding: 20px;
+      }
+      legend {
+        font-weight: bold;
+        font-size: 24px;
+        color: #333;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        padding: 5px 10px;
+      }
+      input {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        box-sizing: border-box;
+      }
+      button {
+        padding: 12px 20px;
+        margin: 10px 5px 0 0;
+        border: none;
+        background-color: #ff6f61;
+        color: #fff;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #ff4f3e;
+      }
+    </style>
+  </head>
+  <body>
+    <fieldset>
+      <legend>MySQL</legend>
+      <form action="data">
+        아이디 : <input type="text" name="id" /><br />
+        이름 : <input type="text" name="name" /><br />
+        나이 : <input type="text" name="age" /><br />
+        이메일 : <input type="text" name="email" /><br />
+        <button type="submit">제출</button>
+        <button type="reset">내용지우기</button>
+        <button type="button" onclick="location.href='/list'">
+          리스트보기
+        </button>
+      </form>
+    </fieldset>
+  </body>
+</html>
