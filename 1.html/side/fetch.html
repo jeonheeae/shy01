@@ -1,40 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>fetch</title>
-    <style>
-      table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-
-      th,
-      td {
-        border: 1px solid black;
-        padding: 8px;
-        text-align: left;
-      }
-
-      th {
-        background-color: #f2f2f2;
-      }
-    </style>
-  </head>
-  <body>
-    <table id="myTable"></table>
+    <title>Document</title>
     <script>
       const url = "https://jsonplaceholder.typicode.com/posts";
       fetch(url)
         .then((response) => response.json())
         .then((data) => {
-          let table = "<tr><th>번호</th><th>제목</th></tr>";
+          let list = "";
           for (let i = 0; i < 5; i++) {
-            table += `<tr><td>${i + 1}</td><td>${data[i].title}</td></tr>`;
+            list += `<div>${i} 번째 ${data[i].title}</div>`;
           }
-          document.getElementById("myTable").innerHTML = table;
+          document.write(list);
         });
     </script>
-  </body>
+  </head>
+
+  <body></body>
 </html>
