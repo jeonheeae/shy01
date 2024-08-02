@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>리액트 CDN 연습</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const text1 = "안녕하세요";
+      const text2 = "반가워요";
+      const Header = () => {
+        return <h1>헤더입니다.</h1>;
+      };
+      const Content = () => {
+        return (
+          <div>
+            <h1>열심히 해봅시다.</h1>
+            <button onClick={() => notice(text1)}>{text1}</button>
+            <button onClick={() => notice(text2)}>{text2}</button>
+          </div>
+        );
+      };
+      const Footer = () => {
+        return <h2>footer 부분</h2>;
+      };
+      const notice = (구멍) => alert(구멍);
+
+      ReactDOM.createRoot(document.getElementById("root")).render([
+        <Header />,
+        <Content />,
+        <Footer />,
+      ]);
+    </script>
+  </body>
+</html>
