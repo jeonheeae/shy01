@@ -33,6 +33,17 @@ body {
     background-attachment: fixed;
   }
 }
+
+table {
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: none;
+}
+
 .board_wrap {
   width: 80%;
   margin: 50px auto;
@@ -48,21 +59,29 @@ body {
   border-top: 2px solid #000000;
 }
 
-.board_list div {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
+.board_list table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.board_list .header {
-  font-weight: bold;
+.board_list th,
+.board_list td {
+  padding: 15px;
+}
+
+.board_list th {
   background-color: #71a3e1;
+  font-weight: bold;
 }
 
-.board_list .row {
+.board_list tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.board_list tr {
   background-color: #d1eaff;
 }
 
-.board_list .row:nth-child(even) {
-  background-color: #f9f9f9;
+.board_list tr:hover {
+  background-color: #78c2ff;
 }

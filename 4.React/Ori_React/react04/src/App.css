@@ -36,25 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-h1 {
-  color: rgb(252, 255, 159);
-}
-
-button {
-  background-color: rgb(250, 246, 232);
-  border: 3px solid rgb(30, 62, 99);
-  padding: 13px;
-}
-button:hover {
-  background-color: rgb(255, 242, 155);
-}
-
-h2 {
-  color: rgb(255, 255, 255);
-}
-
-mark {
-  background-color: rgb(195, 239, 245);
-  color: black;
-}

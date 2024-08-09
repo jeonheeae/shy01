@@ -1,6 +1,6 @@
 import "./App.css";
 import Login from "./pages/login.jsx";
-import Test from "./pages/test.jsx";
+import Board from "./pages/board.jsx";
 
 function App() {
   const pop = () => alert("안녕하세요🌞");
@@ -12,7 +12,7 @@ function App() {
       <hr />
       {state && <Login />}
       <hr />
-      {state && <Test />}
+      {state && <Board />}
     </>
   );
 }

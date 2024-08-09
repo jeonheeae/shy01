@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        width: 40%;
+        background-color: rgb(255, 245, 201);
+      }
+      input {
+        padding: 3px;
+      }
+      button {
+        margin-top: 10px;
+        background-color: lightgoldenrodyellow;
+        padding: 3px;
+        border-color: antiquewhite;
+      }
+      .del-btn {
+        margin-top: 10px;
+        background-color: rgb(250, 120, 84);
+        padding: 3px;
+        border-color: #fc6f47;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="color: orangered">🌼할 일 목록🌼</h1>
+    <input type="text" />
+    <button>추가하기</button>
+    <button class="del-btn">전체 삭제</button>
+    <div></div>
+
+    <script>
+      const input = document.querySelector("input");
+      const btn = document.querySelector("button");
+      const dbtn = document.querySelector(".del-btn");
+      const obtn = document.querySelector("or-btn");
+      const list = document.querySelector("div");
+      let inputData;
+      input.addEventListener("keyup", (e) => {
+        inputData = e.currentTarget.value;
+      });
+
+      btn.addEventListener("click", () => {
+        if (inputData) {
+          const vdiv = document.createElement("div"); // 라인 하나 추가
+          const vcheck = document.createElement("input"); // 체크박스 추가
+          const vspan = document.createElement("span"); // 추가된 내용
+          const vbutton = document.createElement("button"); // 버튼 추가
+
+          list.appendChild(vdiv).append(vcheck, vspan, vbutton);
+          vcheck.type = "checkbox";
+          vspan.textContent = inputData;
+          vbutton.textContent = "삭제";
+          input.value = inputData = null; // 내용 비우기
+
+          vcheck.addEventListener("click", (e) => {
+            vdiv.style.color = e.currentTarget.checked ? "lightgray" : "black"; // 색넣기
+            vdiv.style.textDecoration = e.currentTarget.checked
+              ? "line-through"
+              : "none"; //가운데 줄긋기
+            console.log(e.currentTarget.checked);
+          });
+
+          vbutton.addEventListener("click", (e) => {
+            if (e.target) list.removeChild(vdiv);
+          });
+        } else alert("내용을 입력하세요.");
+      });
+
+      dbtn.addEventListener("click", (e) => {
+        while (list.firstChild) {
+          list.removeChild(list.firstChild);
+        }
+      });
+    </script>
+  </body>
+</html>
