@@ -1,5 +1,18 @@
+#root {
+  width: 600px;
+  height: 550px;
+  padding: 2rem;
+  text-align: center;
+  background-image: url("https://pbs.twimg.com/media/FOhm6v4aMAAX1eI?format=jpg&name=4096x4096");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .App {
   text-align: center;
+}
+body {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVrQJ0zuDDQGoWBxw7w0G3mhpruAKELHQt3Q&s");
 }
 
 .App-logo {
@@ -35,4 +48,21 @@
   to {
     transform: rotate(360deg);
   }
+}
+div {
+  font-weight: 600;
+}
+a {
+  color: dodgerblue;
+  text-decoration-line: none;
+  font-weight: 600;
+}
+h1 {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  opacity: 0.8;
+}
+
+button {
+  background-color: rgb(255, 244, 200);
 }
