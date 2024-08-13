@@ -1,0 +1,125 @@
+/* 기본 스타일 (PC 버전) */
+
+@media (min-width: 769px) {
+  #root {
+    width: 750px;
+    height: 550px;
+    padding: 2rem;
+    border: 5px solid rgb(249, 204, 204);
+    border-radius: 2px;
+    background-image: url("https://jacobce.cafe24.com/includes/kitty/assets/images/kitty.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30%;
+    background-position-y: 380px;
+    background-position-x: 550px;
+    background-color: rgba(255, 250, 253, 0.5);
+  }
+  a {
+    font-weight: 800;
+    color: #ff92af;
+    text-decoration: inherit;
+  }
+  a:hover {
+    color: #ff0000;
+  }
+
+  body {
+    font-weight: 800;
+    margin: 0;
+    display: flex;
+    /* place-items: center; */
+    min-width: 320px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    text-align: center;
+    background-image: url("https://i.pinimg.com/originals/93/2a/b4/932ab42c24fc678750865247b1656480.jpg");
+    background-size: cover;
+  }
+
+  h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+    color: rgb(255, 117, 151);
+  }
+
+  button {
+    background-color: #fff2c0;
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 3px;
+    margin: 3px;
+    padding: 3px;
+  }
+  button:hover {
+    background-color: #ffc341;
+  }
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+}
+/* 모바일 스타일 */
+
+@media (max-width: 768px) {
+  #root {
+    width: 500px;
+    height: 600px;
+    padding: 2rem;
+    border: 5px solid rgb(249, 204, 204);
+    border-radius: 2px;
+    background-image: url("https://i.namu.wiki/i/EEGI0bYbd3qWKK23OSfV9iuZAxnF1JaP9VmxmODt3DUcSQCDL8Tuqna4_iSLWWhWYT_OqemrvZ5BDiyH1SokO7x9xX2dD-BPj9ml-l2Z-J7v1WnOwc2vuLWCs6i5LgiAMVFyK1ku62yM6IAz8nb2Zg.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position-y: 530px;
+    background-position-x: 10px;
+    background-color: rgba(255, 250, 253, 0.5);
+  }
+  a {
+    font-weight: 800;
+    color: #070707;
+    text-decoration: inherit;
+  }
+  a:hover {
+    color: #ff004c;
+  }
+
+  body {
+    font-weight: 800;
+    margin: 0;
+    display: flex;
+    /* place-items: center; */
+    min-width: 320px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    text-align: center;
+    background-image: url("https://wallpapers.com/images/hd/hello-kitty-pc-9vg596kz5v3qmcty.jpg");
+    background-size: cover;
+    background-position-x: -60px;
+  }
+
+  h1 {
+    font-size: 2em;
+    line-height: 1.1;
+    color: rgb(255, 3, 66);
+  }
+
+  button {
+    background-color: #f9f9f9;
+    border: 3px solid rgb(7, 7, 7);
+    border-radius: 3px;
+    margin: 3px;
+    padding: 3px;
+  }
+  button:hover {
+    background-color: #ffbbc1;
+  }
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+}
