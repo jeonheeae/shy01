@@ -1,0 +1,9 @@
+.ex6div {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: rgb(242, 169, 169);
+}
+.ex6div ul li {
+  background-color: yellow;
+}

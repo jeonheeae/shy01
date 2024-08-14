@@ -1,0 +1,132 @@
+/* 기본 스타일 (PC 버전) */
+
+@media (min-width: 769px) {
+  #root {
+    width: auto;
+    height: auto;
+    padding: 2rem;
+    max-width: 750px;
+    min-width: 550px;
+    min-height: 600px;
+    border: 5px solid rgb(249, 204, 204);
+    border-radius: 2px;
+    background-image: url("https://i.namu.wiki/i/QTQM_W-kXEWd3EbAOPbW_T8DmqivoC1yPI11EgfImx-g361IsP113pDqhSWYKNS344bXezwq78w9LTolVzpIWw.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30%;
+    background-position-y: 440px;
+    background-position-x: 435px;
+    background-color: rgba(255, 250, 253, 0.2);
+  }
+  a {
+    font-weight: 800;
+    color: #f6bc37;
+    text-decoration: inherit;
+  }
+  a:hover {
+    color: #ff8400;
+  }
+
+  body {
+    font-weight: 800;
+    margin: 0;
+    display: flex;
+    /* place-items: center; */
+    min-width: 320px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    text-align: center;
+    background-image: url("https://cdn-optimized.imweb.me/upload/S2020052284d6ce0099734/41096f1b69dc8.jpg?w=1920g");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  h1 {
+    font-size: 2em;
+    line-height: 1.1;
+    color: rgb(248, 144, 166);
+  }
+
+  button {
+    background-color: #fff2c0;
+    border: 3px solid rgb(248, 144, 166);
+    border-radius: 3px;
+    margin: 3px;
+    padding: 3px;
+  }
+  button:hover {
+    background-color: #fde2a7;
+  }
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+}
+/* 모바일 스타일 */
+
+@media (max-width: 768px) {
+  #root {
+    width: auto;
+    height: auto;
+    padding: 2rem;
+    max-width: 500px;
+    min-width: 500px;
+    min-height: 600px;
+    border: 5px solid rgb(133, 225, 255);
+    border-radius: 2px;
+    background-image: url("https://i.namu.wiki/i/QXqdaYVLQyi2BL566GjH2H23sm_ugVsVuqO-k4E_vCEEa7XxHeLLfHDZBwVcAZRLknKezRfB1S2Vp1rBWwWI1g.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position-y: 440px;
+    background-position-x: 350px;
+    background-color: rgba(255, 250, 253, 0.5);
+  }
+  a {
+    font-weight: 800;
+    color: #fd8ac4;
+    text-decoration: inherit;
+  }
+  a:hover {
+    color: #ff004c;
+  }
+
+  body {
+    font-weight: 800;
+    margin: 0;
+    display: flex;
+    /* place-items: center; */
+    min-width: 320px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    text-align: center;
+    background-image: url("https://i.pinimg.com/236x/b2/a5/d6/b2a5d65a3fb6b24ae4d6cfda7b251ca6.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  h1 {
+    font-size: 2em;
+    line-height: 1.1;
+    color: rgb(59, 189, 245);
+  }
+
+  button {
+    background-color: #f8f5e3;
+    border: 3px solid rgb(59, 189, 245);
+    border-radius: 3px;
+    margin: 3px;
+    padding: 3px;
+  }
+  button:hover {
+    background-color: #ffeaa7;
+  }
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+}
